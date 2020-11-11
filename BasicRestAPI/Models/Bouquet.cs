@@ -1,4 +1,4 @@
-namespace Architecture.Models
+namespace BasicRestAPI.Models
 {
     public class Bouquet
     {
