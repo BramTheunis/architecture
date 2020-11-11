@@ -9,7 +9,14 @@ namespace BasicRestAPI.Controllers
     [ApiController]
     public class BouquetsController : ControllerBase
     {
-        private readonly MockBasicRestAPIRepo _repository = new MockBasicRestAPIRepo();
+        private readonly IBasicRestAPIRepo _repository;
+
+        public BouquetsController(IBasicRestAPIRepo repository)
+        {
+            _repository = repository;
+        }
+
+       //  private readonly MockBasicRestAPIRepo _repository = new MockBasicRestAPIRepo();
         [HttpGet]
         public ActionResult <IEnumerable<Bouquet>> GetAllBouquets()
         {
