@@ -1,6 +1,6 @@
 namespace Architecture.Models
 {
-    public class Flower
+    public class Bouquet
     {
         public int Id { get; set; }
         public string Name { get; set; }
