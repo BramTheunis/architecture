@@ -5,32 +5,32 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BasicRestAPI.Controllers
 {
-    [Route("api/bouquets")]
+    [Route("api/stores")]
     [ApiController]
-    public class BouquetsController : ControllerBase
+    public class StoresController : ControllerBase
     {
         private readonly IBasicRestAPIRepo _repository;
 
-        public BouquetsController(IBasicRestAPIRepo repository)
+        public StoresController(IBasicRestAPIRepo repository)
         {
             _repository = repository;
         }
 
        //  private readonly MockBasicRestAPIRepo _repository = new MockBasicRestAPIRepo();
         [HttpGet]
-        public ActionResult <IEnumerable<Bouquet>> GetAllBouquets()
+        public ActionResult <IEnumerable<Store>> GetAllStores()
         {
-            var bouquetItems = _repository.GetBouquet();
+            var storeItems = _repository.GetStore();
 
-            return Ok(bouquetItems);
+            return Ok(storeItems);
         }
 
         [HttpGet("{id}")]
-        public ActionResult <Bouquet> GetBouquetById(int id)
+        public ActionResult <Store> GetStoreById(int id)
         {
-            var bouquetItem = _repository.GetBouquetById(id);
+            var storeItem = _repository.GetStoreById(id);
 
-            return Ok(bouquetItem);
+            return Ok(storeItem);
         }
     }
 }

@@ -7,5 +7,8 @@ namespace BasicRestAPI.Data
     {
         IEnumerable<Bouquet> GetBouquet();
         Bouquet GetBouquetById(int id);
+
+        IEnumerable<Store> GetStore();
+        Store GetStoreById(int id);
     }
 }
